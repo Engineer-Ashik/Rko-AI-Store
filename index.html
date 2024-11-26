@@ -14,21 +14,40 @@
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" type="text/css" />
     <!--Font Awesome CDN-->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" rel="stylesheet" type="text/css" />
-
+    <!--CSS File Connection-->
+    <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
-    <!-- Adding Links in comment-->
-    <!-- 
-    ## API Links
-    All data: [https://openapi.programming-hero.com/api/ai/tools](https://openapi.programming-hero.com/api/ai/tools)
-
-    Single data details: https://openapi.programming-hero.com/api/ai/tool/${id}
-
-    Single data Example: https://openapi.programming-hero.com/api/ai/tool/01
-     -->
-    <h1>Welcome to "RKO AI Store"</h1>
+    <h1 class="font-bold text-center p-5">Welcome to "RKO AI Store"</h1>
     
+    <div class="flex justify-center">
+    <button class="btn bg-red-500 hover:bg-yellow-500 text-white font-bold py-2 px-4 rounded-lg">Sort By Date</button>
+    </div>
+
+    <div class="flex justify-center gap-4 p-5">
+        <input class="bg-slate-300 border-2 border-black py-2 px-4 rounded-lg text-red-600" placeholder="Search Your Gadgets Here..." type="text">
+        <button class="btn bg-red-500 hover:bg-yellow-500 text-white font-bold py-2 px-4 rounded-lg">Search</button>
+    </div>
+
+    <div>
+        <div class="card card-compact bg-transparent w-96 shadow-xl">
+            <figure>
+              <img
+                src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
+                alt="AI Universe Hub" />
+            </figure>
+            <div class="card-body">
+              <h2 class="card-title text-black font-bold">Features</h2>
+              <p>Details</p>
+              <p class="border-b-2"></p>
+              <h2>Another Header changeable</h2>
+              <time datetime="1914">  <!-- means the year 1914 -->
+                <time datetime="1914-12">  <!-- means December 1914 -->
+              
+            </div>
+          </div>
+    </div>
     <!--ai javaScript connection to html-->
     <script src="/ai.js"></script>
 </body>

@@ -19,11 +19,12 @@ Single data Example: https://openapi.programming-hero.com/api/ai/tool/01
  }
 
  const displayHubs = hubs  =>{
-    console.log(hubs);
-    //1. Where to save dynamic code in div
-    const hubContainer = document.getElementById('hub-container');
-    hubs.forEach(element => {
-      console.log("each datas in a serial", element);
+          //console.log(hubs);
+      //1. Where to save dynamic code in div
+      const hubContainer = document.getElementById('hub-container');
+      hubs.forEach(element => {
+          //console.log("each datas in a serial", element);
+
       //2. create div
       const hubCard = document.createElement('div');
       //-- classList for style
@@ -41,12 +42,19 @@ Single data Example: https://openapi.programming-hero.com/api/ai/tool/01
               <p>${element.published_in}</p>
             </div>
       `
-      //Append the Child
+      //4. Append the Child
       hubContainer.appendChild(hubCard);
     });
-//    const hubCard = document.createElement('div');
-  //  hubCard.classList = 34.2 7:11
- }
+  }
+
+    //searching code 
+    const handlesearch = () =>{
+      const searchinput= document.getElementById('search-bar');
+      const searchValue = searchinput.value;
+      console.log(searchValue);
+      searchinput.value = "";
+    }
+
  loadHub();
 
 //----------------------------------------------------------------------------------------

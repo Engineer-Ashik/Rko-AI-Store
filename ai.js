@@ -31,7 +31,7 @@ Single data Example: https://openapi.programming-hero.com/api/ai/tool/01
       //3. Set innerHTML
       hubCard.innerHTML = `
       <figure>
-              <img src="${element.image}" alt="AI Universe Hub" />
+              <img src="${element.image}" alt="${element.description}" />
       </figure>
             <div class="card-body">
               <h2 class="card-title text-black font-bold">Features</h2>
@@ -41,7 +41,7 @@ Single data Example: https://openapi.programming-hero.com/api/ai/tool/01
               <p>${element.published_in}</p>
             </div>
       `
-      //Append Child
+      //Append the Child
       hubContainer.appendChild(hubCard);
     });
 //    const hubCard = document.createElement('div');

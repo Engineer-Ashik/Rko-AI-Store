@@ -10,8 +10,8 @@ Single data Example: https://openapi.programming-hero.com/api/ai/tool/01
  console.log("AI JavaScript connected");
 
  // Programming Hero Code:
- const loadHub = async () =>{
-    const res = await fetch(`https://openapi.programming-hero.com/api/ai/tools`);
+ const loadHub = async (id) =>{
+    const res = await fetch(`https://openapi.programming-hero.com/api/ai/tool${id}`);
     const data = await res.json();
     const hubs = data.data.tools;
     //console.log(hubs);
@@ -22,6 +22,13 @@ Single data Example: https://openapi.programming-hero.com/api/ai/tool/01
           //console.log(hubs);
       //1. Where to save dynamic code in div
       const hubContainer = document.getElementById('hub-container');
+      
+      //refreshing every search 
+      hubContainer.innerHTML = "";
+      
+      //display only first 6 items
+      hubs = hubs.slice(0,6);
+
       hubs.forEach(element => {
           //console.log("each datas in a serial", element);
 
@@ -32,7 +39,7 @@ Single data Example: https://openapi.programming-hero.com/api/ai/tool/01
       //3. Set innerHTML
       hubCard.innerHTML = `
       <figure>
-              <img src="${element.image}" alt="${element.description}" />
+              <img src="${element.image}" alt="${element?.description}" />
       </figure>
             <div class="card-body">
               <h2 class="card-title text-black font-bold">Features</h2>
@@ -52,10 +59,12 @@ Single data Example: https://openapi.programming-hero.com/api/ai/tool/01
       const searchinput= document.getElementById('search-bar');
       const searchValue = searchinput.value;
       console.log(searchValue);
-      searchinput.value = "";
+      //searchinput.value = "";
+      loadHub(searchValue);
+
     }
 
- loadHub();
+ //loadHub();
 
 //----------------------------------------------------------------------------------------
 

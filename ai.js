@@ -25,9 +25,22 @@ Single data Example: https://openapi.programming-hero.com/api/ai/tool/01
       
       //refreshing every search 
       hubContainer.innerHTML = "";
+
+      //Load more to display by click button
+      const loadMore = document.getElementById('loadmore-button');
+          //display only first 6 items
+          hubs = hubs.slice(0,6);
+            console.log("the Length is :", hubs.length);
+
       
-      //display only first 6 items
-      hubs = hubs.slice(0,6);
+      if(hubs.length > 6){
+        loadMore.classList.add('hidden');
+      }
+      else{
+        loadMore.classList.remove('hidden');
+      }
+      
+     
 
       hubs.forEach(element => {
           //console.log("each datas in a serial", element);

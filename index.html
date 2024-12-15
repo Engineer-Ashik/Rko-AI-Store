@@ -35,9 +35,13 @@
   <main class="container mx-auto mt-8 text-center">
     <div id="hub-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
     </div>
-    <div id="loadmore-button" class="hidden">
-    <button class="btn bg-red-500 hover:bg-yellow-500 text-white font-bold py-2 px-4 m-4 rounded-lg">Load More</button>
-  </div>
+      <div id="loading-spinners" class="hidden">
+        <span class="loading loading-spinner loading-md text-indigo-700"></span>
+      </div>
+
+      <div id="loadmore-button" class="hidden">
+        <button class="btn bg-red-500 hover:bg-yellow-500 text-white font-bold py-2 px-4 m-4 rounded-lg">Load More</button>
+      </div>
   </main>
     <!--ai javaScript connection to html-->
     <script src="/ai.js"></script>

@@ -20,6 +20,7 @@ Single data Example: https://openapi.programming-hero.com/api/ai/tool/01
 
  const displayHubs = hubs  =>{
           //console.log(hubs);
+
       //1. Where to save dynamic code in div
       const hubContainer = document.getElementById('hub-container');
       
@@ -30,7 +31,7 @@ Single data Example: https://openapi.programming-hero.com/api/ai/tool/01
       const loadMore = document.getElementById('loadmore-button');
           //display only first 6 items
           hubs = hubs.slice(0,6);
-            console.log("the Length is :", hubs.length);
+          console.log("the Length is :", hubs.length);
 
       
       if(hubs.length > 6){
@@ -64,17 +65,30 @@ Single data Example: https://openapi.programming-hero.com/api/ai/tool/01
       `
       //4. Append the Child
       hubContainer.appendChild(hubCard);
+      loadingSpinner(false);
     });
   }
 
     //searching code 
     const handlesearch = () =>{
+      loadingSpinner(true);
       const searchinput= document.getElementById('search-bar');
       const searchValue = searchinput.value;
       console.log(searchValue);
       //searchinput.value = "";
       loadHub(searchValue);
+    }
 
+    //loading spinner toggle function
+    const loadingSpinner = (load) => { 
+    const loadingS = document.getElementById('loading-spinners');
+
+    if(load){
+      loadingS.classList.remove('hidden');
+    }
+    else{
+      loadingS.classList.add('hidden');
+    }
     }
 
  //loadHub();

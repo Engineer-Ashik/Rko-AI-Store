@@ -10,17 +10,17 @@ Single data Example: https://openapi.programming-hero.com/api/ai/tool/01
  console.log("AI JavaScript connected");
 
  // Programming Hero Code:
- const loadHub = async (id) =>{
+ const loadHub = async (id, isshowAll) =>{
     const res = await fetch(`https://openapi.programming-hero.com/api/ai/tool${id}`);
     const data = await res.json();
     const hubs = data.data.tools;
     //console.log(hubs);
-    displayHubs(hubs);
+    displayHubs(hubs, isshowAll);
  }
 
- const displayHubs = hubs  =>{
+ const displayHubs = (hubs, isshowAll)  =>{
           //console.log(hubs);
-
+console.log("isshowALL clicked", isshowAll);
       //1. Where to save dynamic code in div
       const hubContainer = document.getElementById('hub-container');
       
@@ -30,11 +30,13 @@ Single data Example: https://openapi.programming-hero.com/api/ai/tool/01
       //Load more to display by click button
       const loadMore = document.getElementById('loadmore-button');
           //display only first 6 items
+          if(!isshowAll){
           hubs = hubs.slice(0,6);
+          }
           console.log("the Length is :", hubs.length);
 
       
-      if(hubs.length > 6){
+      if(hubs.length > 6 && isshowAll){
         loadMore.classList.add('hidden');
       }
       else{
@@ -65,18 +67,18 @@ Single data Example: https://openapi.programming-hero.com/api/ai/tool/01
       `
       //4. Append the Child
       hubContainer.appendChild(hubCard);
-      loadingSpinner(false);
+      loadingSpinner(false); //spinner removing
     });
   }
 
     //searching code 
-    const handlesearch = () =>{
-      loadingSpinner(true);
+    const handlesearch = (isshowAll) =>{
+      loadingSpinner(true); //spinner adding
       const searchinput= document.getElementById('search-bar');
       const searchValue = searchinput.value;
       console.log(searchValue);
       //searchinput.value = "";
-      loadHub(searchValue);
+      loadHub(searchValue, isshowAll);
     }
 
     //loading spinner toggle function
@@ -91,6 +93,11 @@ Single data Example: https://openapi.programming-hero.com/api/ai/tool/01
     }
     }
 
+    //Handle LoadMore or ShowALL
+    const handleloadmore = () => {
+      //const loadmore = document.getElementById('loadmore-button');
+      handlesearch(true);
+    }
  //loadHub();
 
 //----------------------------------------------------------------------------------------

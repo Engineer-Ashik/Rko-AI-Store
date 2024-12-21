@@ -63,7 +63,7 @@ console.log("isshowALL clicked", isshowAll);
               <p class="border-b-2"></p>
               <h2 class="card-title text-black font-bold">${element.name}</h2>
               <p>${element.published_in}</p>
-              <button onclick="showdetails('${element.id}')" class="btn bg-red-600 hover:bg-yellow-600 text-white font-bold py-2 px-4 mx-auto rounded-lg w-1/2"> Show Details </button>
+              <button onclick="showdetails('${element.id}'); my_modal_3.showModal()" class="btn bg-red-600 hover:bg-yellow-600 text-white font-bold py-2 px-4 mx-auto rounded-lg w-1/2"> Show Details </button>
             </div>
       `
       //4. Append the Child

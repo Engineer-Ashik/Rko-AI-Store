@@ -2,49 +2,65 @@
 <html lang="en" class="bg-white">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RKO AI Store</title>
-    <!--Tailwind JS Connection-->
-    <script src="/tailwing.config.js"></script>
-    <!--DaisyUi CDN-->
-    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.14/dist/full.min.css" rel="stylesheet" type="text/css" />
-    <!--Tailwind CDN-->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" type="text/css" />
-    <!--Font Awesome CDN-->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" rel="stylesheet" type="text/css" />
-    <!--CSS File Connection-->
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RKO AI Store</title>
+  <!--Tailwind JS Connection-->
+  <script src="/tailwing.config.js"></script>
+  <!--DaisyUi CDN-->
+  <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.14/dist/full.min.css" rel="stylesheet" type="text/css" />
+  <!--Tailwind CDN-->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" type="text/css" />
+  <!--Font Awesome CDN-->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" rel="stylesheet"
+    type="text/css" />
+  <!--CSS File Connection-->
+  <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
   <header>
     <h1 class="font-bold text-center p-5">Welcome to "RKO AI Store"</h1>
-    
+
     <div class="flex justify-center">
-    <button class="btn bg-red-500 hover:bg-yellow-500 text-white font-bold py-2 px-4 rounded-lg">Sort By Date</button>
+      <button class="btn bg-red-500 hover:bg-yellow-500 text-white font-bold py-2 px-4 rounded-lg">Sort By Date</button>
     </div>
 
     <div class="flex justify-center gap-4 p-5">
-        <input id="search-bar" class="bg-slate-300 border-2 border-black py-2 px-4 rounded-lg text-red-600" placeholder="Search Your Gadgets Here..." type="text">
-        <button onclick="handlesearch()" class="btn bg-red-500 hover:bg-yellow-500 text-white font-bold py-2 px-4 rounded-lg">Search</button>
+      <input id="search-bar" class="bg-slate-300 border-2 border-black py-2 px-4 rounded-lg text-red-600"
+        placeholder="Search Your Gadgets Here..." type="text">
+      <button onclick="handlesearch()"
+        class="btn bg-red-500 hover:bg-yellow-500 text-white font-bold py-2 px-4 rounded-lg">Search</button>
     </div>
   </header>
 
   <main class="container mx-auto mt-8 text-center">
     <div id="hub-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
     </div>
-      <div id="loading-spinners" class="hidden">
-        <span class="loading loading-spinner loading-md text-indigo-700"></span>
-      </div>
+    <div id="loading-spinners" class="hidden">
+      <span class="loading loading-spinner loading-md text-indigo-700"></span>
+    </div>
 
-      <div id="loadmore-button" class="hidden">
-        <button onclick="handleloadmore()" class="btn bg-red-500 hover:bg-yellow-500 text-white font-bold py-2 px-4 m-4 rounded-lg">Load More</button>
+    <div id="loadmore-button" class="hidden">
+      <button onclick="handleloadmore()"
+        class="btn bg-red-500 hover:bg-yellow-500 text-white font-bold py-2 px-4 m-4 rounded-lg">Load More</button>
+    </div>
+    <!--Show Modal-->
+    <!-- You can open the modal using ID.showModal() method -->
+   
+    <dialog id="my_modal_3" class="modal">
+      <div class="modal-box">
+        <form method="dialog">
+          <button class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button>
+        </form>
+        <h3 class="text-lg font-bold">Hello!</h3>
+        <p class="py-4">Press ESC key or click on ✕ button to close</p>
       </div>
+    </dialog>
   </main>
-    <!--ai javaScript connection to html-->
-    <script src="/ai.js"></script>
+  <!--ai javaScript connection to html-->
+  <script src="/ai.js"></script>
 </body>
 
 </html>

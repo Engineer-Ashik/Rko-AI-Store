@@ -101,8 +101,12 @@ console.log("isshowALL clicked", isshowAll);
     }
 
     //Show Details Function
-    const showdetails = (id) => {
+    const showdetails = async (id) => {
       console.log("Show details Clicked", id);
+      //load single data for display
+      const res = await fetch(`https://openapi.programming-hero.com/api/ai/tool/${id}`);
+      const data = await res.json();
+      console.log("New data is:",data);
     }
  //loadHub();
 

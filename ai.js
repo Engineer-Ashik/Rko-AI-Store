@@ -63,7 +63,7 @@ console.log("isshowALL clicked", isshowAll);
               <p class="border-b-2"></p>
               <h2 class="card-title text-black font-bold">${element.name}</h2>
               <p>${element.published_in}</p>
-              <button onclick="showdetails('${element.id}'); my_modal_3.showModal()" class="btn bg-red-600 hover:bg-yellow-600 text-white font-bold py-2 px-4 mx-auto rounded-lg w-1/2"> Show Details </button>
+              <button onclick="showdetails('${element.id}')" class="btn bg-red-600 hover:bg-yellow-600 text-white font-bold py-2 px-4 mx-auto rounded-lg w-1/2"> Show Details </button>
             </div>
       `
       //4. Append the Child
@@ -102,11 +102,29 @@ console.log("isshowALL clicked", isshowAll);
 
     //Show Details Function
     const showdetails = async (id) => {
-      console.log("Show details Clicked", id);
       //load single data for display
       const res = await fetch(`https://openapi.programming-hero.com/api/ai/tool/${id}`);
       const data = await res.json();
-      console.log("New data is:",data);
+      //console.log("New data is:",data.data);
+      showdModal(data);
+    }
+
+    //Show-Modal
+    const showdModal = (element) => {
+      console.log("New Data modal inputs: ",element.data);
+      const hubDescription = document.getElementById('hub-description');
+      hubDescription.innerText = element.data.description;
+
+      const hubStarter = document.getElementById('hub-starter');
+      hubStarter.innerText = element.data.pricing[0].price;
+
+      const hubProfessional = document.getElementById('hub-professional');
+      hubProfessional.innerText = element.data.pricing[1].price;
+
+      const hubEnterprise = document.getElementById('hub-enterprise');
+      hubEnterprise.innerText = element.data.pricing[2].price;
+
+      my_modal_3.showModal()
     }
  //loadHub();
 

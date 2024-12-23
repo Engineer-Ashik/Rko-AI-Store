@@ -143,6 +143,15 @@ console.log("isshowALL clicked", isshowAll);
 
       const hubFeaturesThree = document.getElementById('hub-features-three');
       hubFeaturesThree.innerText = element.data.use_cases[2].name;
+      
+      const hubIntegrationsOne = document.getElementById('hub-integrations-one');
+      hubIntegrationsOne.innerText = element.data.use_cases[0].name;
+
+      const hubIntegrationsTwo = document.getElementById('hub-integrations-two');
+      hubIntegrationsTwo.innerText = element.data.use_cases[1].name;
+
+      const hubIntegrationsThree = document.getElementById('hub-integrations-three');
+      hubIntegrationsThree.innerText = element.data.use_cases[2].name;
 
       my_modal_3.showModal()
     }

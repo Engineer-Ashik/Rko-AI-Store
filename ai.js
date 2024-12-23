@@ -124,6 +124,9 @@ console.log("isshowALL clicked", isshowAll);
       const hubEnterprise = document.getElementById('hub-enterprise');
       hubEnterprise.innerText = element.data.pricing[2].price;
 
+      //const hubFeatures = document.getElementById('hub-features');
+      //hubFeatures.innerText = element.data.features.feature_name;
+
       my_modal_3.showModal()
     }
  //loadHub();

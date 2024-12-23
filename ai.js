@@ -128,9 +128,21 @@ console.log("isshowALL clicked", isshowAll);
       hubImages.innerHTML = `
         <img src="${element.data.image_link[0]}" alt="" placeholder="${element.data.tool_name}"/>}
       `
+      
+      const hubInput = document.getElementById('hub-input');
+      hubInput.innerText = element.data.input_output_examples[0].input;
 
-      //const hubFeatures = document.getElementById('hub-features');
-      //hubFeatures.innerText = element.data.features.feature_name;
+      const hubOutput = document.getElementById('hub-output');
+      hubOutput.innerText = element.data.input_output_examples[0].output;
+
+      const hubFeaturesOne = document.getElementById('hub-features-one');
+      hubFeaturesOne.innerText = element.data.use_cases[0].name;
+
+      const hubFeaturesTwo = document.getElementById('hub-features-two');
+      hubFeaturesTwo.innerText = element.data.use_cases[1].name;
+
+      const hubFeaturesThree = document.getElementById('hub-features-three');
+      hubFeaturesThree.innerText = element.data.use_cases[2].name;
 
       my_modal_3.showModal()
     }

@@ -124,6 +124,11 @@ console.log("isshowALL clicked", isshowAll);
       const hubEnterprise = document.getElementById('hub-enterprise');
       hubEnterprise.innerText = element.data.pricing[2].price;
 
+      const hubImages = document.getElementById('hub-images');
+      hubImages.innerHTML = `
+        <img src="${element.data.image_link[0]}" alt="" placeholder="${element.data.tool_name}"/>}
+      `
+
       //const hubFeatures = document.getElementById('hub-features');
       //hubFeatures.innerText = element.data.features.feature_name;
 
